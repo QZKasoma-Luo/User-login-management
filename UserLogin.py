@@ -26,21 +26,20 @@ while True:
         NewUser_flag = input(
             'The user name does not exist, do you want to sign up ? Y/N?:')
         if NewUser_flag == 'Y' or 'y':
-            while True:
-                name = input('Please Set Your User Name:')
-                if name in users:
+            name = input('Please Set Your User Name:')
+            if name in users:
+                print(
+                    "This user name is already existed! Please Use Other User Name")
+            else:
+                password_for_NewUser = input('Please Set your Password:')
+                renter_new_password = input('Please renter your password:')
+                if password_for_NewUser == renter_new_password:
+                    users[name] = password_for_NewUser
                     print(
-                        "This user name is already existed! Please Use Other User Name")
+                        'The account has been cerated! please re-start the program and log in your account if you still can not sign in!')
+                    break
                 else:
-                    password_for_NewUser = input('Please Set your Password:')
-                    renter_new_password = input('Please renter your password:')
-                    if password_for_NewUser == renter_new_password:
-                        users[name] = password_for_NewUser
-                        print(
-                            'The account has been cerated! please re-start the program and log in your account if you still can not sign in!')
-                        break
-                    else:
-                        print('Those two password does not match!')
-        else:
+                    print('Those two password does not match!')
+        elif NewUser_flag == 'N' or 'n':
             print("Goodbey!~")
             break
