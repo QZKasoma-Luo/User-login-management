@@ -25,7 +25,7 @@ while True:
     else:
         NewUser_flag = input(
             'The user name does not exist, do you want to sign up ? Y/N?:')
-        if NewUser_flag == 'Y':
+        if NewUser_flag == 'Y' or 'y':
             while True:
                 name = input('Please Set Your User Name:')
                 if name in users:
